@@ -1,0 +1,33 @@
+{# template_base #}
+
+{% load static %}
+
+<!doctype html>
+    <html class="no-js" lang="es-CL">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <title>C.A. Hydroponic</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+        <link rel="stylesheet" href="{% static 'css/app.css' %}">
+
+    </head>
+
+
+<body>
+
+    {% block menu %}{% endblock menu %}
+
+    {% block content %}{% endblock content %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+
+    <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+
+</html>
