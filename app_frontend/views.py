@@ -4,6 +4,15 @@ from django.views.generic import ListView, DetailView, TemplateView
 from app_backend.models import Farm, History
 
 
+class SplashScreenView(TemplateView):
+    template_name = 'pages/page_splash_screen.html'
+
+
+
+
+
+
+
 class FarmListView(ListView):
     queryset = Farm.objects.all()
     context_object_name = 'farm_list'
