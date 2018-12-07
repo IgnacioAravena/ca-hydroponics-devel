@@ -1,4 +1,57 @@
-<p>farm_detail</p>
+{% extends 'template_base.html' %}
+{% load static %}
 
-<p>{{ farm.uuid }}</p>
-<p>{{ farm.owner }}</p>
+{% block menu %}
+    {% include 'sidebar.html' %}
+
+    <nav class="navbar shadow-sm">
+        <a class="navbar-brand" id="sidebarCollapse" href="#">
+            <img src="{% static 'img/logo.png' %}" width="34" height="34" alt="menu">
+        </a>
+
+        <ul class="nav navbar-nav abs-center-x">
+            <li class="nav-item">
+                <a class="nav-link" href="/farm">
+                    <strong>Detalles</strong>
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h5>{{ farm.name }}</h5>
+            <p><small>{{ farm.description }}</small></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p><small>temp_air: {{ farm.sensor_temp_air }}</small></p>
+        </div>
+        <div class="col">
+            <p><small>temp_water: {{ farm.sensor_temp_water }}</small></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p><small>light: {{ farm.sensor_light }}</small></p>
+        </div>
+        <div class="col">
+            <p><small>wetness: {{ farm.sensor_wetness }}</small></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <a href="/farm/{{ farm.id }}/history">
+                <img src="{% static 'img/tmp/chart.png' %}" alt="history">
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -5,10 +5,13 @@ from django.db import models
 class Farm(models.Model):
     uuid = models.CharField(max_length=10, unique=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=120)
+    image = models.ImageField(upload_to='static/img/farm/')
     description = models.TextField(blank=True, null=True)
     sensor_temp_air = models.PositiveIntegerField(default=0)
     sensor_temp_water = models.PositiveIntegerField(default=0)
     sensor_light = models.PositiveIntegerField(default=0)
+    sensor_wetness = models.PositiveIntegerField(default=0)
     last_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -20,6 +23,7 @@ class History(models.Model):
     sensor_temp_air = models.PositiveIntegerField(default=0)
     sensor_temp_water = models.PositiveIntegerField(default=0)
     sensor_light = models.PositiveIntegerField(default=0)
+    sensor_wetness = models.PositiveIntegerField(default=0)
     date = models.DateTimeField()
 
     def __str__(self):

@@ -1,3 +1,8 @@
+.green {
+color: #1cac81
+}
+
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -25,7 +30,11 @@ body {
 /*
     DEMO STYLE
 */
-
+    .abs-center-x {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
 a,
 a:hover,
@@ -36,12 +45,13 @@ a:focus {
 }
 
 .navbar {
-    padding: 15px 10px;
-    background: #fff;
+    /*padding: 15px 10px;*/
+    /*background: #fff;*/
     border: none;
     border-radius: 0;
-    margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    /*box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);*/
+    padding: 0 10px 0 10px
 }
 
 .navbar-btn {
@@ -68,7 +78,7 @@ a:focus {
     left: -250px;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
+    background: #41675c;
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;

@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic.base import View
+
 from app_backend.models import Farm, History
 
 
@@ -32,13 +34,35 @@ class FarmDetailView(DetailView):
         return self.queryset.filter(id=self.kwargs.get('pk'))
 
 
-class FarmHistoryDetailView(DetailView):
-    queryset = History.objects.all()
-    context_object_name = 'history'
-    template_name = 'farm/farm_history.html'
+class FarmHistoryDetailView(View):
+    # queryset = History.objects.all()
+    # context_object_name = 'history'
+    template = 'farm/farm_history.html'
 
-    def get_queryset(self):
-        return self.queryset.filter(farm_id=self.kwargs.get('pk'))
+    # def get_queryset(self):
+    #     return self.queryset.filter(farm_id=self.kwargs.get('pk'))
+
+    def get(self, request, *args, **kwargs):
+        farm_id = self.kwargs.get('pk')
+        farm_name = ''
+        sensor_temp_air = []
+        sensor_temp_water = []
+        sensor_light = []
+        sensor_wetness = []
+        objects = History.objects.filter(farm_id=farm_id)
+        for o in objects:
+            farm_name = o.farm.name
+            sensor_temp_air.append([o.date, o.sensor_temp_air])
+            sensor_temp_water.append([o.date, o.sensor_temp_water])
+            sensor_light.append([o.date, o.sensor_light])
+            sensor_wetness.append([o.date, o.sensor_wetness])
+
+        return render(request, self.template, locals())
+
+
+
+
+
 
 
 class HelpTemplateView(TemplateView):

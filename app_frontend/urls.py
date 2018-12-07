@@ -9,12 +9,12 @@ urlpatterns = [
     path('', SplashScreenView.as_view(), name="splash_screen"),
 
     path('farm', login_required(FarmListView.as_view())),
+    path('farm/<pk>/', login_required(FarmDetailView.as_view())),
+    path('farm/<pk>/history', login_required(FarmHistoryDetailView.as_view())),
 
 
 
 
-    path('farm/<pk>/', FarmDetailView.as_view(), name='farm-detail'),
-    path('farm/<pk>/history', FarmHistoryDetailView.as_view(), name='farm-history'),
 
     path('help', HelpTemplateView.as_view(), name="help"),
 
