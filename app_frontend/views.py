@@ -1,12 +1,13 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, TemplateView
 from app_backend.models import Farm, History
 
 
 class SplashScreenView(TemplateView):
     template_name = 'pages/page_splash_screen.html'
-
 
 
 

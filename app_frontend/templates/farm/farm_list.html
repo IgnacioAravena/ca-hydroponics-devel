@@ -1,5 +1,44 @@
-<p>farm_list</p>
+{% extends 'template_base.html' %}
+{% load static %}
+
+{% block menu %}
+    {% include 'sidebar.html' %}
+
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" id="sidebarCollapse" href="#">
+        <img src="{% static 'img/logo.png' %}" width="30" height="30" alt="">
+      </a>
+    <p>tus cultivos</p>
+
+    </nav>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fa fa-align-left"></i>
+            </button>
+            <div class="text-center">
+                <p>Tus Cultivos</p>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <p>farm_list</p>
+
 
 {% for f in farm_list %}
     <p>{{ f.uuid }}</p>
 {% endfor %}
+
+
+
+    </div>
+
+{% endblock %}
