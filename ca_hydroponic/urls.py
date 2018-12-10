@@ -31,5 +31,5 @@ urlpatterns += [
 
 urlpatterns += [
     path('', include('app_frontend.urls'), name='app_frontend'),
-    path('api', include('app_backend.urls'), name='app_backend'),
+    path('api/', include('app_backend.urls'), name='app_backend'),
 ]

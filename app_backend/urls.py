@@ -1,5 +1,6 @@
 from django.urls import path
+from .views import FarmApi
 
 urlpatterns = [
-    #path('', AdminIndex.as_view(), name="index"),
+    path('farm', FarmApi.as_view(), name="api"),
 ]
