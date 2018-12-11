@@ -11,7 +11,6 @@ from django.views.generic.base import View
 class FarmApi(View):
 
     def get(self, request, *args, **kwargs):
-        print(request)
         uuid = request.GET.get('uuid')
         sensor_temp_air = request.GET.get('sensor_temp_air')
         sensor_temp_water = request.GET.get('sensor_temp_water')
@@ -39,5 +38,4 @@ class FarmApi(View):
         farm.sensor_wetness = sensor_wetness
         farm.save()
 
-        data = {}
-        return JsonResponse(data)
+        return JsonResponse({'result': 'ok'})

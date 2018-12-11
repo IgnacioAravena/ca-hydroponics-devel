@@ -33,5 +33,8 @@ class History(models.Model):
     sensor_wetness = models.PositiveIntegerField(default=0)
     date = models.DateTimeField()
 
+    class Meta:
+        ordering = ('-date',)
+
     def __str__(self):
         return '%s - %s' % (self.farm, self.date)

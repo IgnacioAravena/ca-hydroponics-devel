@@ -51,7 +51,7 @@ class FarmHistoryDetailView(View):
         sensor_wetness = []
         objects = History.objects.filter(farm_id=farm_id)
         for o in objects:
-            farm_name = o.farm.name
+            farm_name = o.farm.seed.name
             sensor_temp_air.append([o.date, o.sensor_temp_air])
             sensor_temp_water.append([o.date, o.sensor_temp_water])
             sensor_light.append([o.date, o.sensor_light])
