@@ -45,18 +45,20 @@ class FarmHistoryDetailView(View):
     def get(self, request, *args, **kwargs):
         farm_id = self.kwargs.get('pk')
         farm_name = ''
-        sensor_temp_air = []
-        sensor_temp_water = []
-        sensor_light = []
-        sensor_wetness = []
-        objects = History.objects.filter(farm_id=farm_id)
-        for o in objects:
-            farm_name = o.farm.seed.name
-            sensor_temp_air.append([o.date, o.sensor_temp_air])
-            sensor_temp_water.append([o.date, o.sensor_temp_water])
-            sensor_light.append([o.date, o.sensor_light])
-            sensor_wetness.append([o.date, o.sensor_wetness])
+        labels = []
+        serie_temp_air = []
+        serie_temp_water = []
+        serie_light = []
+        serie_wetness = []
 
+        objects = History.objects.filter(farm_id=farm_id)
+        for obj in objects:
+            farm_name = obj.farm.seed.name
+            labels.append(obj.date)
+            serie_temp_air.append(obj.sensor_temp_air)
+            serie_temp_water.append(obj.sensor_temp_water)
+            serie_light.append(obj.sensor_light)
+            serie_wetness.append(obj.sensor_wetness)
         return render(request, self.template, locals())
 
 

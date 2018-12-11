@@ -34,10 +34,8 @@
             <div class="ct-chart-temp-air"></div>
             <script>
                 var chart = new Chartist.Line('.ct-chart-temp-air', {
-                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-                    series: [
-                        [1, 5, 2, 5, 4, 3]
-                    ]
+                    labels: ['Mon', 'Tue', 'Wed'],
+                    series: [ {{ serie_temp_air }} ]
                 },{
                     low: 0,
                     showArea: true,
@@ -46,10 +44,8 @@
                 });
 
             </script>
-            {% for i in sensor_temp_air %}
-                <li>{{ i.0 }}</li>
-            {% endfor %}
-            </ul>
+            <p>{{ labels }}</p>
+            <p>{{ serie_temp_air }}</p>
         </div>
     </div>
 
