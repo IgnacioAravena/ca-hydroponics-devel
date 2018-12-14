@@ -27,14 +27,14 @@
             <div class="col box-farm">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">{{ f.name }}</h5>
-                        <img class="card-img-top" src="{{ f.image }}" alt="Card image cap">
+                        <h5 class="card-title text-center">{{ f.seed.name }}</h5>
+                        <img class="card-img-top mx-auto d-block" style="max-width: 60%" src="{{ f.seed.image }}" alt="Card image cap">
                     </div>
                     <div class="card-footer text-muted text-right">
                         <a href="/farm/{{ f.id }}" class="card-link">Ver Detalles <span><i class="fas fa-arrow-right"></i></span></a>
                     </div>
                 </div>
-            </div>66<6
+            </div>
         </div>
     {% endfor %}
 

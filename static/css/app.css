@@ -10,6 +10,15 @@
     background: #f4fff5;
 }
 
+html, body {
+    height: 100%;
+}
+
+.container {
+    min-height: 100%;
+    overflow: hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -272,3 +281,18 @@ a.article:hover {
 .box-history .card .card-body {
     padding: 12px 0 0 12px;
 }
+
+.box-farm .card, .box-history .card{
+    box-shadow: 0 4px 10px rgba(0,0,0,.1)
+}
+
+.card-body {
+    padding: 12px;
+}
+
+
+
+
+
+
+
