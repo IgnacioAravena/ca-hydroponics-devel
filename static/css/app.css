@@ -210,3 +210,42 @@ a.article:hover {
     top: 0;
     right: 0;
 }
+
+
+
+
+/* -----------------------------------------------------
+        CHATS
+ ------------------------------------------------------*/
+
+.ct-chart-temp-air .ct-line {
+  stroke: #95E0E8 !important;
+  stroke-width: 3px!important;
+}
+.ct-chart-temp-air .ct-area {
+    fill: #95E0E8!important;
+}
+
+.ct-chart-temp-water .ct-line {
+  stroke: #00468C !important;
+  stroke-width: 3px!important;
+}
+.ct-chart-temp-water .ct-area {
+    fill: #00468C!important;
+}
+
+.ct-chart-light .ct-line {
+  stroke: #FFEB00 !important;
+  stroke-width: 3px!important;
+}
+.ct-chart-light .ct-area {
+    fill: #FFEB00!important;
+}
+
+.ct-chart-wetness .ct-line {
+  stroke: #664228 !important;
+  stroke-width: 3px!important;
+}
+.ct-chart-wetness .ct-area {
+    fill: #664228!important;
+}
