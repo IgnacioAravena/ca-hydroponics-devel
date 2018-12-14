@@ -20,7 +20,7 @@ class FarmApi(View):
             return JsonResponse({'result': 'bad request'})
 
         farm = Farm.objects.filter(uuid=uuid)
-        if farm is None:
+        if not farm:
             return JsonResponse({'result': 'farm not found'})
 
         farm = farm.get()

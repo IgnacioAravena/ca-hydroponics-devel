@@ -30,75 +30,97 @@
 
     <div class="row">
         <div class="col">
-            <p>Temperatura del Aire<p>
+            <p>Temperatura del Aire</p>
             <div class="ct-chart-temp-air"></div>
-            <script>
-                var chart = new Chartist.Line('.ct-chart-temp-air', {
-                    labels: ['Mon', 'Tue', 'Wed'],
-                    series: [ {{ serie_temp_air }} ]
-                },{
-                    low: 0,
-                    showArea: true,
-                    showPoint: false,
-                    fullWidth: true
-                });
-
-            </script>
-            <p>{{ labels }}</p>
-            <p>{{ serie_temp_air }}</p>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <p>Temperatura del Agua<p>
-            <ul>
-            {% for i in sensor_temp_water %}
-                <li>{{ i }}</li>
-            {% endfor %}
-            </ul>
+            <p>Temperatura del Agua</p>
+            <div class="ct-chart-temp-water"></div>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <p>Luminosidad<p>
-            <ul>
-            {% for i in sensor_light %}
-                <li>{{ i }}</li>
-            {% endfor %}
-            </ul>
+            <p>Luminosidad</p>
+            <div class="ct-chart-light"></div>
         </div>
     </div>
 
 
-        <div class="row">
+    <div class="row">
         <div class="col">
-            <p>Humedad<p>
-            <ul>
-            {% for i in sensor_wetness %}
-                <li>{{ i }}</li>
-            {% endfor %}
-            </ul>
+            <p>Humedad</p>
+            <div class="ct-chart-wetness"></div>
         </div>
     </div>
 
 
     <script>
+        var options = {
+            low: 0,
+            showArea: true,
+            showPoint: false,
+            fullWidth: true,
+            axisX: {
+                showGrid: false,
+                showLabel: false
+            },
+        };
 
-                      chart.on('draw', function(data) {
-            console.log("asdas");
-  if(data.type === 'line' || data.type === 'area') {
-    data.element.animate({
-      d: {
-        begin: 2000 * data.index,
-        dur: 2000,
-        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-        to: data.path.clone().stringify(),
-        easing: Chartist.Svg.Easing.easeOutQuint
-      }
-    });
-  }
-});
+        var chart1 = new Chartist.Line('.ct-chart-temp-air', {
+            labels: [{{ labels }}],
+            series: [{{ serie_temp_air }}]
+        }, options);
+
+        var chart2 = new Chartist.Line('.ct-chart-temp-water', {
+            labels: [{{ labels }}],
+            series: [{{ serie_temp_water }}]
+        }, options);
+
+        var chart3 = new Chartist.Line('.ct-chart-light', {
+            labels: [{{ labels }}],
+            series: [{{ serie_light }}]
+        }, options);
+
+        var chart4 = new Chartist.Line('.ct-chart-wetness', {
+            labels: [{{ labels }}],
+            series: [{{ serie_wetness }}]
+        }, options);
+
+
+    </script>
+
+    <script>
+
+        function _chart_effect(data) {
+            if (data.type === 'line' || data.type === 'area') {
+                data.element.animate({
+                    d: {
+                        begin: 2000 * data.index,
+                        dur: 2000,
+                        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                        to: data.path.clone().stringify(),
+                        easing: Chartist.Svg.Easing.easeOutQuint
+                    }
+                });
+            }
+        }
+
+        chart1.on('draw', function (data) {
+            _chart_effect(data);
+        });
+        chart2.on('draw', function (data) {
+            _chart_effect(data);
+        });
+        chart3.on('draw', function (data) {
+            _chart_effect(data);
+        });
+        chart4.on('draw', function (data) {
+            _chart_effect(data);
+        });
+
     </script>
 {% endblock %}

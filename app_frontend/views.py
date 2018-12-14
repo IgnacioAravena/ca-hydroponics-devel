@@ -54,7 +54,8 @@ class FarmHistoryDetailView(View):
         objects = History.objects.filter(farm_id=farm_id)
         for obj in objects:
             farm_name = obj.farm.seed.name
-            labels.append(obj.date)
+            # labels.append(obj.date)
+            labels.append(0)
             serie_temp_air.append(obj.sensor_temp_air)
             serie_temp_water.append(obj.sensor_temp_water)
             serie_light.append(obj.sensor_light)
