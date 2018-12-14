@@ -243,9 +243,9 @@ a.article:hover {
 }
 
 .ct-chart-wetness .ct-line {
-  stroke: #664228 !important;
+  stroke: #299617 !important;
   stroke-width: 3px!important;
 }
 .ct-chart-wetness .ct-area {
-    fill: #664228!important;
+    fill: #299617!important;
 }
