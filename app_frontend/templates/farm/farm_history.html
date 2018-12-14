@@ -25,35 +25,52 @@
     <div class="row">
         <div class="col">
             <h4>{{ farm_name }}</h4>
+            <p class="small">Ultimos 10 días.</p>
         </div>
     </div>
 
     <div class="row">
-        <div class="col">
-            <p>Temperatura del Aire</p>
-            <div class="ct-chart-temp-air"></div>
+        <div class="col box-history">
+            <div class="card">
+                <div class="card-body">
+                    <p>Temperatura del Aire</p>
+                    <div class="ct-chart-temp-air"></div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col">
-            <p>Temperatura del Agua</p>
-            <div class="ct-chart-temp-water"></div>
+        <div class="col box-history">
+            <div class="card">
+                <div class="card-body">
+                    <p>Temperatura del Agua</p>
+                    <div class="ct-chart-temp-water"></div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col">
-            <p>Luminosidad</p>
-            <div class="ct-chart-light"></div>
+        <div class="col box-history">
+            <div class="card">
+                <div class="card-body">
+                    <p>Luminosidad</p>
+                    <div class="ct-chart-light"></div>
+                </div>
+            </div>
         </div>
     </div>
 
 
     <div class="row">
-        <div class="col">
-            <p>Humedad</p>
-            <div class="ct-chart-wetness"></div>
+        <div class="col box-history">
+            <div class="card">
+                <div class="card-body">
+                    <p>Humedad</p>
+                    <div class="ct-chart-wetness"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -68,6 +85,7 @@
                 showGrid: false,
                 showLabel: false
             },
+            chartPadding: { left: -12 }
         };
 
         var chart1 = new Chartist.Line('.ct-chart-temp-air', {

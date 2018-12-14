@@ -1,16 +1,29 @@
 .green {
-color: #1cac81
+    color: #1cac81
 }
 
+.bg-gray {
+    background: #bbbbbb;
+}
+
+.bg-green {
+    background: #f4fff5;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
 }
 
+.container {
+    padding-top: 16px;
+}
+
 /* fede effect*/
 
 @keyframes fadeIn {
-  from { opacity: 0; }
+    from {
+        opacity: 0;
+    }
 }
 
 .animate-flicker {
@@ -26,15 +39,14 @@ body {
 }
 
 
-
 /*
     DEMO STYLE
 */
-    .abs-center-x {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 a,
 a:hover,
@@ -49,7 +61,7 @@ a:focus {
     /*background: #fff;*/
     border: none;
     border-radius: 0;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     /*box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);*/
     padding: 0 10px 0 10px
 }
@@ -119,6 +131,7 @@ a:focus {
     opacity: 0;
     transition: all 0.5s ease-in-out;
 }
+
 .overlay.active {
     display: block;
     opacity: 1;
@@ -150,7 +163,7 @@ a:focus {
     background: #fff;
 }
 
-#sidebar ul li.active>a,
+#sidebar ul li.active > a,
 a[aria-expanded="true"] {
     color: #fff;
     background: #6d7fcc;
@@ -212,40 +225,50 @@ a.article:hover {
 }
 
 
-
-
 /* -----------------------------------------------------
         CHATS
  ------------------------------------------------------*/
 
 .ct-chart-temp-air .ct-line {
-  stroke: #95E0E8 !important;
-  stroke-width: 3px!important;
+    stroke: #95E0E8 !important;
+    stroke-width: 3px !important;
 }
+
 .ct-chart-temp-air .ct-area {
-    fill: #95E0E8!important;
+    fill: #95E0E8 !important;
 }
 
 .ct-chart-temp-water .ct-line {
-  stroke: #00468C !important;
-  stroke-width: 3px!important;
+    stroke: #00468C !important;
+    stroke-width: 3px !important;
 }
+
 .ct-chart-temp-water .ct-area {
-    fill: #00468C!important;
+    fill: #00468C !important;
 }
 
 .ct-chart-light .ct-line {
-  stroke: #FFEB00 !important;
-  stroke-width: 3px!important;
+    stroke: #FFEB00 !important;
+    stroke-width: 3px !important;
 }
+
 .ct-chart-light .ct-area {
-    fill: #FFEB00!important;
+    fill: #FFEB00 !important;
 }
 
 .ct-chart-wetness .ct-line {
-  stroke: #299617 !important;
-  stroke-width: 3px!important;
+    stroke: #299617 !important;
+    stroke-width: 3px !important;
 }
+
 .ct-chart-wetness .ct-area {
-    fill: #299617!important;
+    fill: #299617 !important;
+}
+
+.box-history {
+    padding-bottom: 12px;
+}
+
+.box-history .card .card-body {
+    padding: 12px 0 0 12px;
 }
