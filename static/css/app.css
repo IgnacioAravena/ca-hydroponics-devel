@@ -290,6 +290,14 @@ a.article:hover {
     padding: 12px;
 }
 
+.card-footer{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: .45rem 1.25rem;
+    background-color: white;
+    font-size: 14px;
+}
+
 
 
 
