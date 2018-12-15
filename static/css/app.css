@@ -92,6 +92,7 @@ body {
 .screen-center {
     position: fixed;
     top: 25%;
+    padding-left: 0 !important;
 }
 
 
