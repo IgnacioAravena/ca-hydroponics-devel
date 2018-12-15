@@ -1,5 +1,6 @@
 {% extends 'template_base.html' %}
 {% load static %}
+ {% load humanize %}
 
 {% block menu %}
     {% include 'sidebar.html' %}
@@ -24,25 +25,25 @@
 {% block content %}
     <div class="row">
         <div class="col">
-            <h5>{{ farm.name }}</h5>
-            <p><small>{{ farm.description }}</small></p>
+            <h5 class="">{{ farm.seed.name }}</h5>
+            <p><small>Actualizado {{ farm.last_date|naturaltime }}</small></p>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <p><small>temp_air: {{ farm.sensor_temp_air }}</small></p>
+            <p>temp_air: {{ farm.sensor_temp_air }}</p>
         </div>
         <div class="col">
-            <p><small>temp_water: {{ farm.sensor_temp_water }}</small></p>
+            <p>temp_water: {{ farm.sensor_temp_water }}</p>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <p><small>light: {{ farm.sensor_light }}</small></p>
+            <p>light: {{ farm.sensor_light }}</p>
         </div>
         <div class="col">
-            <p><small>wetness: {{ farm.sensor_wetness }}</small></p>
+            <p>wetness: {{ farm.sensor_wetness }}</p>
         </div>
     </div>
 
