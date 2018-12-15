@@ -47,7 +47,7 @@ class FarmHistoryDetailView(View):
         serie_light = []
         serie_wetness = []
 
-        objects = History.objects.filter(farm_id=farm_id)[:30]
+        objects = History.objects.filter(farm_id=farm_id)
         for obj in objects:
             farm_name = obj.farm.seed.name
             # labels.append(obj.date)
@@ -56,6 +56,7 @@ class FarmHistoryDetailView(View):
             serie_temp_water.append(obj.sensor_temp_water)
             serie_light.append(obj.sensor_light)
             serie_wetness.append(obj.sensor_wetness)
+        print(serie_wetness)
         return render(request, self.template, locals())
 
 

@@ -33,7 +33,7 @@ class History(models.Model):
     date = models.DateTimeField()
 
     class Meta:
-        ordering = ('-date',)
+        ordering = ('date',)
 
     def __str__(self):
         return '%s - %s' % (self.farm, self.date)
