@@ -1,9 +1,36 @@
 .green {
-    color: #1cac81
+    color: #38B52B
+}
+
+.green-light {
+    color: #DDF3DB;
+}
+
+.btn-green {
+    background-color: #38B52B;
+    border-color: #38B52B;
+}
+
+.btn-green:hover, .btn-green:focus, .btn-green:active {
+    color: #38B52B;
+    background-color: #fff;
+    border-color: #38B52B;
 }
 
 .bg-gray {
     background: #bbbbbb;
+}
+
+.bg-white {
+    background: white!important;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #38B52B;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(56, 181, 43, 0.25);
 }
 
 .bg-green {
@@ -130,25 +157,25 @@ a:focus {
     left: 0;
 }
 
-#dismiss {
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    background: #7386D5;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
+/*#dismiss {*/
+    /*width: 35px;*/
+    /*height: 35px;*/
+    /*line-height: 35px;*/
+    /*text-align: center;*/
+    /*background: #7386D5;*/
+    /*position: absolute;*/
+    /*top: 10px;*/
+    /*right: 10px;*/
+    /*cursor: pointer;*/
+    /*-webkit-transition: all 0.3s;*/
+    /*-o-transition: all 0.3s;*/
+    /*transition: all 0.3s;*/
+/*}*/
 
-#dismiss:hover {
-    background: #fff;
-    color: #7386D5;
-}
+/*#dismiss:hover {*/
+    /*background: #fff;*/
+    /*color: #41675c;*/
+/*}*/
 
 .overlay {
     display: none;
@@ -167,13 +194,14 @@ a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+    padding: 14px 2px 4px 14px;
+    background: #DDF3DB;
+    color: #41675c;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #41675c;
 }
 
 #sidebar ul p {
@@ -183,19 +211,24 @@ a:focus {
 
 #sidebar ul li a {
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 16px;
     display: block;
 }
 
+
+#sidebar ul.list-unstyled li a svg {
+    margin-right: 10px;
+}
+
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    background: #f4fff5;
+    color: #41675c;
 }
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+    background: #f4fff5;
+    color: #41675c;
 }
 
 a[data-toggle="collapse"] {
@@ -306,6 +339,11 @@ a.article:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,.1)
 }
 
+.box-farm {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 .card-body {
     padding: 12px;
 }
@@ -330,4 +368,33 @@ a.article:hover {
         border: 1px solid rgba(0,0,0,.125);
 }
 
+.card-login{
+    background: #f4fff5;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
+
+.sidebar-header div .col-10{
+    margin-top: 4px;
+
+}
+
+
+.sensor-air {
+    color: #85d4dc
+}
+
+.sensor-water{
+    color: #00468C;
+}
+
+.sensor-light{
+    color:#ffc107;
+}
+
+.sensor-wetness {
+    color: #299617;
+}

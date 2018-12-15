@@ -2,34 +2,39 @@
 {% load static %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-sm">
-            <img class="mx-auto d-block" src="{% static 'img/logo.png' %}" alt="logo">
-            <h3 class="text-center"><strong>C.A. Hydroponics</strong></h3>
+    <div class="container bg-white">
 
-            <form method="post" autocomplete="off">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="username"></label>
-                    <input type="text" name="username" autofocus="" required="" id="id_username"
-                           class="form-control" placeholder="Ingresa tu usuario" autocomplete="off">
+        <div class="row">
+            <div class="col-sm">
+                <img class="mx-auto d-block" src="{% static 'img/logo.png' %}" alt="logo">
+                <h3 class="text-center"><strong>C.A. Hydroponics</strong></h3>
+
+                <div class="card card-login mt-4">
+                    <div class="card-body">
+                        <form method="post" autocomplete="off" class="text-center">
+                            {% csrf_token %}
+
+                            <div class="form-group mt-3">
+                                <input type="text" name="username" autofocus="" required="" id="id_username"
+                                       class="form-control" placeholder="Ingresa tu usuario" autocomplete="off">
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="password" name="password" required="" id="id_password"
+                                       class="form-control" placeholder="Ingresa tu contraseña"
+                                       autocomplete="new-password">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block btn-green">Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="password"></label>
-                    <input type="password" name="password" required="" id="id_password"
-                           class="form-control" placeholder="Ingresa tu contraseña" autocomplete="new-password">
-
-                </div>
-                <input autocomplete="false" name="hidden" type="text" style="display:none;">
-                <button type="submit" class="btn btn-primary">Ingresar</button>
-            </form>
 
 
-
+            </div>
         </div>
+
     </div>
-
-
 {% endblock %}
 
 

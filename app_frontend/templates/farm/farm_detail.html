@@ -23,71 +23,80 @@
 {% endblock %}
 
 {% block content %}
-    <div class="row mb-2">
-        <div class="col">
-            <h4 class="">{{ farm.seed.name }}</h4>
-            <p class="text-muted">
-                <small><i class="far fa-clock"></i>Actualizado hace {{ farm.last_date|timesince }}</small>
-            </p>
-        </div>
-    </div>
-
-    <div class="row mb-4">
-        <div class="col-6">
-            <div class="card card-sensor">
-                <div class="card-body">
-                    <h3>
-                        <i class="fas fa-wind"></i> {{ farm.sensor_temp_air }}°C
-                    </h3>
-                    <p class="text-muted" style="margin-bottom: 0"><small>temp. ambiente</small></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="card card-sensor">
-                <div class="card-body">
-                    <h3>
-                        <i class="fas fa-water"></i> {{ farm.sensor_temp_water }}°C
-                    </h3>
-                    <p class="text-muted" style="margin-bottom: 0"><small>temp. agua</small></p>
-                </div>
+    <div class="container bg-green">
+        <div class="row mb-2">
+            <div class="col">
+                <h4 class="">{{ farm.seed.name }}</h4>
+                <p class="text-muted">
+                    <small><i class="far fa-clock"></i>Actualizado hace {{ farm.last_date|timesince }}</small>
+                </p>
             </div>
         </div>
 
+        <div class="row mb-4">
+            <div class="col-6">
+                <div class="card card-sensor">
+                    <div class="card-body sensor-air">
+                        <h3>
+                            <i class="fas fa-wind"></i> {{ farm.sensor_temp_air }}°C
+                        </h3>
+                        <p class="text-muted" style="margin-bottom: 0">
+                            <small>temp. ambiente</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card card-sensor">
+                    <div class="card-body sensor-water">
+                        <h3>
+                            <i class="fas fa-water"></i> {{ farm.sensor_temp_water }}°C
+                        </h3>
+                        <p class="text-muted" style="margin-bottom: 0">
+                            <small>temp. agua</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-    </div>
 
-    <div class="row mb-4">
-        <div class="col">
-            <div class="card card-sensor">
-                <div class="card-body">
-                    <h3>
-                        <i class="fas fa-lightbulb"></i> {{ farm.sensor_light }}%
-                    </h3>
-                    <p class="text-muted" style="margin-bottom: 0"><small>luminosidad</small></p>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="card card-sensor">
+                    <div class="card-body sensor-light">
+                        <h3>
+                            <i class="fas fa-lightbulb"></i> {{ farm.sensor_light }}%
+                        </h3>
+                        <p class="text-muted" style="margin-bottom: 0">
+                            <small>luminosidad</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-sensor">
+                    <div class="card-body sensor-wetness">
+                        <h3>
+                            <i class="fas fa-tint"></i> {{ farm.sensor_wetness }}%
+                        </h3>
+                        <p class="text-muted" style="margin-bottom: 0">
+                            <small>humedad</small>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card card-sensor">
-                <div class="card-body">
-                    <h3>
-                        <i class="fas fa-tint"></i> {{ farm.sensor_wetness }}%
-                    </h3>
-                    <p class="text-muted" style="margin-bottom: 0"><small>humedad</small></p>
-                </div>
+
+        <div class="row">
+            <div class="col">
+                <a href="/farm/{{ farm.id }}/history">
+                    <img class="mx-auto d-block border" height="100" src="{% static 'img/chart.png' %}" alt="history">
+                    <p class="text-center">Ver Historial</p>
+                </a>
+
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col">
-            <a href="/farm/{{ farm.id }}/history">
-                <img class="mx-auto d-block border" src="{% static 'img/chart.png' %}" alt="history">
-                <p class="text-center">Ver Historial</p>
-            </a>
-
-        </div>
-    </div>
-
 {% endblock %}

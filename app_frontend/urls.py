@@ -12,11 +12,11 @@ urlpatterns = [
     path('farm/<pk>/', login_required(FarmDetailView.as_view())),
     path('farm/<pk>/history', login_required(FarmHistoryDetailView.as_view())),
 
-
-
-
-
     path('help', HelpTemplateView.as_view(), name="help"),
+
+
+
+
 
     path('accounts/profile', ProfileDetailView.as_view(), name="profile")
 
