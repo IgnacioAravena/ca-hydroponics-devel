@@ -1,6 +1,6 @@
 {% extends 'template_base.html' %}
 {% load static %}
- {% load humanize %}
+{% load humanize %}
 
 {% block menu %}
     {% include 'sidebar.html' %}
@@ -23,35 +23,70 @@
 {% endblock %}
 
 {% block content %}
-    <div class="row">
+    <div class="row mb-2">
         <div class="col">
-            <h5 class="">{{ farm.seed.name }}</h5>
-            <p><small>Actualizado {{ farm.last_date|naturaltime }}</small></p>
+            <h4 class="">{{ farm.seed.name }}</h4>
+            <p class="text-muted">
+                <small><i class="far fa-clock"></i>Actualizado hace {{ farm.last_date|timesince }}</small>
+            </p>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col">
-            <p>temp_air: {{ farm.sensor_temp_air }}</p>
+    <div class="row mb-4">
+        <div class="col-6">
+            <div class="card card-sensor">
+                <div class="card-body">
+                    <h3>
+                        <i class="fas fa-wind"></i> {{ farm.sensor_temp_air }}°C
+                    </h3>
+                    <p class="text-muted" style="margin-bottom: 0"><small>temp. ambiente</small></p>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            <p>temp_water: {{ farm.sensor_temp_water }}</p>
+        <div class="col-6">
+            <div class="card card-sensor">
+                <div class="card-body">
+                    <h3>
+                        <i class="fas fa-water"></i> {{ farm.sensor_temp_water }}°C
+                    </h3>
+                    <p class="text-muted" style="margin-bottom: 0"><small>temp. agua</small></p>
+                </div>
+            </div>
         </div>
+
+
     </div>
-    <div class="row">
+
+    <div class="row mb-4">
         <div class="col">
-            <p>light: {{ farm.sensor_light }}</p>
+            <div class="card card-sensor">
+                <div class="card-body">
+                    <h3>
+                        <i class="fas fa-lightbulb"></i> {{ farm.sensor_light }}%
+                    </h3>
+                    <p class="text-muted" style="margin-bottom: 0"><small>luminosidad</small></p>
+                </div>
+            </div>
         </div>
         <div class="col">
-            <p>wetness: {{ farm.sensor_wetness }}</p>
+            <div class="card card-sensor">
+                <div class="card-body">
+                    <h3>
+                        <i class="fas fa-tint"></i> {{ farm.sensor_wetness }}%
+                    </h3>
+                    <p class="text-muted" style="margin-bottom: 0"><small>humedad</small></p>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
             <a href="/farm/{{ farm.id }}/history">
-                <img src="{% static 'img/chart.png' %}" alt="history">
+                <img class="mx-auto d-block border" src="{% static 'img/chart.png' %}" alt="history">
+                <p class="text-center">Ver Historial</p>
             </a>
+
         </div>
     </div>
 
