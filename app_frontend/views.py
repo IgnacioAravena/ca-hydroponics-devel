@@ -56,7 +56,6 @@ class FarmHistoryDetailView(View):
             serie_temp_water.append(obj.sensor_temp_water)
             serie_light.append(obj.sensor_light)
             serie_wetness.append(obj.sensor_wetness)
-        print(serie_wetness)
         return render(request, self.template, locals())
 
 
