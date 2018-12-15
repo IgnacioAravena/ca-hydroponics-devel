@@ -3,11 +3,11 @@ $(document).ready( function () {
     let pathname = window.location.pathname;
     console.log('pathname', pathname);
 
-    // if(pathname === '/') {
-    //     setTimeout(function () {
-    //         window.location = '/farm';
-    //         }, 5000);
-    // }
+    if(pathname === '/') {
+        setTimeout(function () {
+            window.location = '/farm';
+            }, 5000);
+    }
 
 
 $("#sidebar").mCustomScrollbar({
