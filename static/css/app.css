@@ -12,9 +12,13 @@
 }
 
 .btn-green:hover, .btn-green:focus, .btn-green:active {
-    color: #38B52B;
-    background-color: #fff;
-    border-color: #38B52B;
+    color: #38B52B!important;
+    background-color: #fff!important;
+    border-color: #38B52B!important;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(76, 119, 29, 0.5);
 }
 
 .bg-gray {

@@ -3,6 +3,7 @@ from django.urls import path
 from .views import SplashScreenView
 from .views import FarmListView, FarmDetailView, FarmHistoryDetailView
 from .views import HelpTemplateView, ProfileDetailView, TipsTemplateView
+from .views import ChatView
 
 
 urlpatterns = [
@@ -14,6 +15,7 @@ urlpatterns = [
 
     path('help', HelpTemplateView.as_view(), name="help"),
     path('tips', TipsTemplateView.as_view(), name="tips"),
+    path('chat', ChatView.as_view()),
 
     path('accounts/profile', ProfileDetailView.as_view(), name="profile")
 

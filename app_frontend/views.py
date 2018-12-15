@@ -69,3 +69,13 @@ class TipsTemplateView(TemplateView):
 
 class ProfileDetailView(TemplateView):
     template_name = 'registration/profile.html'
+
+
+class ChatView(View):
+    template = 'pages/page_chat.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template, locals())
+
+    def post(self, request, *args, **kwargs):
+        pass
