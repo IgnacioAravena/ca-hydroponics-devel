@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import path
 from .views import SplashScreenView
 from .views import FarmListView, FarmDetailView, FarmHistoryDetailView
-from .views import HelpTemplateView, ProfileDetailView
+from .views import HelpTemplateView, ProfileDetailView, TipsTemplateView
 
 
 urlpatterns = [
@@ -13,10 +13,7 @@ urlpatterns = [
     path('farm/<pk>/history', login_required(FarmHistoryDetailView.as_view())),
 
     path('help', HelpTemplateView.as_view(), name="help"),
-
-
-
-
+    path('tips', TipsTemplateView.as_view(), name="tips"),
 
     path('accounts/profile', ProfileDetailView.as_view(), name="profile")
 

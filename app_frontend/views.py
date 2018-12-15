@@ -12,10 +12,6 @@ class SplashScreenView(TemplateView):
     template_name = 'pages/page_splash_screen.html'
 
 
-
-
-
-
 class FarmListView(ListView):
     queryset = Farm.objects.all()
     context_object_name = 'farm_list'
@@ -63,15 +59,13 @@ class FarmHistoryDetailView(View):
         return render(request, self.template, locals())
 
 
-
-
-
-
-
 class HelpTemplateView(TemplateView):
     template_name = 'pages/page_help.html'
 
 
+class TipsTemplateView(TemplateView):
+    template_name = 'pages/page_tips.html'
+
+
 class ProfileDetailView(TemplateView):
     template_name = 'registration/profile.html'
-

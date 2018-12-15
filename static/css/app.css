@@ -335,7 +335,7 @@ a.article:hover {
     padding: 12px 0 0 12px;
 }
 
-.box-farm .card, .box-history .card{
+.box-farm .card, .box-history .card, .card{
     box-shadow: 0 4px 10px rgba(0,0,0,.1)
 }
 
@@ -411,4 +411,8 @@ div.help p {
 .rrss i, .rrss svg {
     padding-left: 4px;
     padding-right: 4px;
+}
+
+.strong {
+    font-weight: bolder;
 }
