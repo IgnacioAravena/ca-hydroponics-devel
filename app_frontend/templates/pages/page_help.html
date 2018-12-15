@@ -12,7 +12,7 @@
 
         <ul class="nav navbar-nav abs-center-x">
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/">
                     <strong>Ayuda</strong>
                 </a>
             </li>
@@ -23,23 +23,57 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container bg-green text-center">
-        {% for f in farm_list %}
-            <div class="row mb-4">
-                <div class="col box-farm">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">{{ f.seed.name }}</h5>
-                            <img class="card-img-top mx-auto d-block" style="max-width: 60%" src="{{ f.seed.image }}"
-                                 alt="Card image cap">
-                        </div>
-                        <div class="card-footer text-muted text-right">
-                            <a href="/farm/{{ f.id }}" class="card-link">Ver Detalles <span><i
-                                    class="fas fa-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>
+    <div class="container bg-white help">
+        <div class="row mt-4 mb-5">
+            <div class="col text-center">
+                <h5>C.A. Hidroponics Chile</h5>
+                <p class="small">Contáctate de manera inmediata si necesitas ayuda p tienes alguna duda.</p>
             </div>
-        {% endfor %}
+        </div>
+
+
+        <div class="row mb-5">
+            <div class="col-1"></div>
+            <div class="col-1">
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="col-8">
+                <p>+56957785765</p>
+                <p class="small">Telefono</p>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-1"></div>
+            <div class="col-1">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="col-8">
+                <p>c.a.hydroponics@mail.com</p>
+                <p class="small">Correo</p>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-1"></div>
+            <div class="col-1">
+                <i class="fas fa-comment"></i>
+            </div>
+            <div class="col-9">
+                <p>Hablemos</p>
+                <p class="small">Chat</p>
+            </div>
+        </div>
+
+
+        <div class="row text-center">
+            <div class="col rrss">
+                <i class="fab fa-facebook-f fa-2x"></i>
+                <i class="fab fa-instagram fa-2x"></i>
+                <i class="fab fa-twitter fa-2x"></i>
+            </div>
+        </div>
+
+
     </div>
 {% endblock %}

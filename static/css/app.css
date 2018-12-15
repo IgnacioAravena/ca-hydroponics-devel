@@ -398,3 +398,17 @@ a.article:hover {
 .sensor-wetness {
     color: #299617;
 }
+
+
+.help {
+    color: #41675c;
+}
+
+div.help p {
+    margin-bottom: 0;
+}
+
+.rrss i, .rrss svg {
+    padding-left: 4px;
+    padding-right: 4px;
+}
