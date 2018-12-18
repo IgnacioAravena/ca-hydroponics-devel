@@ -23,7 +23,8 @@ admin.site.site_title = 'C.A. Hydroponic'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('', include('pwa.urls')),  # You MUST use an empty string as the URL prefix
 ]
 
 urlpatterns += [

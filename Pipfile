@@ -9,6 +9,7 @@ gunicorn = "*"
 django-extensions = "*"
 django-heroku = "*"
 pillow = "*"
+django-pwa = "*"
 
 [dev-packages]
 

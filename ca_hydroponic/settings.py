@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     'django_extensions',
     'django_heroku',
+    'pwa',
 ]
 
 INSTALLED_APPS += [
@@ -135,3 +136,20 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 django_heroku.settings(locals())
+
+
+PWA_APP_NAME = 'C.A Hydroponics'
+PWA_APP_DESCRIPTION = "C.A Hydroponics Mobile APP"
+PWA_APP_THEME_COLOR = '#fff'
+PWA_APP_BACKGROUND_COLOR = '#fff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_ORIENTATION = 'portrait'
+PWA_APP_START_URL = '/'
+# PWA_APP_ICONS = [
+#     {
+#         'src': '/static/images/my_app_icon.png',
+#         'sizes': '160x160'
+#     }
+# ]
+# PWA_APP_DIR = 'ltr'
+# PWA_APP_LANG = 'en-US'
